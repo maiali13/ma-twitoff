@@ -1,4 +1,7 @@
 
 # ignore dev db:
 migrations
-# *.db
+*.db
+
+# ignore secret creds:
+.env
