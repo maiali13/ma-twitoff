@@ -1,7 +1,6 @@
 # web_app/routes/admin_routes.py
 
 from flask import Blueprint, jsonify
-
 from web_app.models import db
 
 admin_routes = Blueprint("admin_routes", __name__)

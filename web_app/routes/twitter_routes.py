@@ -77,9 +77,9 @@ def list_users():
     users_response = parse_records(db_users)
     return jsonify(users_response)
 
-@twitter_routes.route("/users/<screen_name>")
-def get_user(screen_name=None):
-    print(screen_name)
-    db_user = User.query.filter(User.screen_name == screen_name).one()
-    return render_template("user.html", user=db_user, tweets=db_user.tweets)
+#  @twitter_routes.route("/users/<screen_name>")
+#  def get_user(screen_name=None):
+#    print(screen_name)
+#    db_user = User.query.filter(User.screen_name == screen_name).one()
+#    return render_template("user.html", user=db_user, tweets=db_user.tweets)
     
