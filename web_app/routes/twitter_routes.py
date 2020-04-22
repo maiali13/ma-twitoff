@@ -48,7 +48,7 @@ def fetch_user_data(screen_name=None):
     counter = 0
     for status in statuses:
         # print(status.full_text)
-        #print("----")
+        # print("----")
         # print(dir(status))
         # get existing tweet from the db or initialize a new one:
         db_tweet = Tweet.query.get(status.id) or Tweet(id=status.id)
@@ -64,3 +64,22 @@ def fetch_user_data(screen_name=None):
 
     return "OK"
     #return render_template("user.html", user=db_user, tweets=statuses) # tweets=db_tweets
+
+
+@twitter_routes.route("/users")
+def list_users_human_friendly():
+    db_users = User.query.all()
+    return render_template("users.html", users=db_users)
+
+@twitter_routes.route("/users.json")
+def list_users():
+    db_users = User.query.all()
+    users_response = parse_records(db_users)
+    return jsonify(users_response)
+
+@twitter_routes.route("/users/<screen_name>")
+def get_user(screen_name=None):
+    print(screen_name)
+    db_user = User.query.filter(User.screen_name == screen_name).one()
+    return render_template("user.html", user=db_user, tweets=db_user.tweets)
+    

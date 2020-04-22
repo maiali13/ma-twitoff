@@ -5,3 +5,7 @@ migrations
 
 # ignore secret creds:
 .env
+.venv
+
+# ignore byte-compiled / DLL files
+__pycache__/
