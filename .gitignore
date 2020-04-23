@@ -1,3 +1,5 @@
+# ignore byte-compiled / DLL files
+__pycache__/
 
 # ignore dev db:
 migrations
@@ -7,5 +9,3 @@ migrations
 .env
 .venv
 
-# ignore byte-compiled / DLL files
-__pycache__/

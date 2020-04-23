@@ -1,8 +1,10 @@
 # web_app/routes/stats_routes.py
 
+
 from flask import Blueprint, render_template, request
 from sklearn.datasets import load_iris
 from sklearn.linear_model import LogisticRegression
+
 from web_app.models import User
 from web_app.services.basilica_service import connection as basilica_connection
 
@@ -28,6 +30,7 @@ def twitoff_prediction():
     screen_name_b = request.form["screen_name_b"]
     tweet_text = request.form["tweet_text"]
 
+    #
     # TRAIN THE MODEL
     #
     # inputs: embeddings for each tweet
