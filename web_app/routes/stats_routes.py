@@ -37,7 +37,7 @@ def twitoff_prediction():
     # labels: screen name for each tweet
 
     model = LogisticRegression(max_iter=1000)
-
+    
     user_a = User.query.filter(User.screen_name == screen_name_a).one()
     user_b = User.query.filter(User.screen_name == screen_name_b).one()
 
