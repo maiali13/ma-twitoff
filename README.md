@@ -1,9 +1,5 @@
 # ma-twitoff
 
-## Installation
-
-TODO: Instructions
-
 ## Setup
 
 Migrate the db:
